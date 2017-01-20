@@ -65,7 +65,7 @@ body {
 }
 
 .thumbnail:hover p, .thumbnail:hover h4 {
-    color: #ff00fe
+    color: white;
 }
 
 .thumbnail p, h4 {
@@ -95,4 +95,4 @@ nav#footer-nav {
   right: 0;
   bottom: 0;
   left: 0;
-}
+}/*

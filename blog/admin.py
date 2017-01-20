@@ -11,7 +11,6 @@ class PostAdmin(admin.ModelAdmin):
     fieldsets = [
         ('Post Head', {'fields': ['title', 'author']}),
         ('Post Content', {'fields': ['content']}),
-        ('Post Content', {'fields': ['date_pub'], 'classes': ['collapse']})
     ]
     inlines = [CommentAdmin]
     list_display = ('title', 'author', 'date_pub')

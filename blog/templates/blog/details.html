@@ -4,9 +4,11 @@
 {% block content %}
 <div class="page-header">
     <h2 style="color: rgb(120, 10, 50); font-family: 'Slabo 27px', serif;">{{ post.title }} <small style="color: gray">by {{ post.author }}</small></h2>
-    <span style="color: black">on {{ post.date_pub }}</span>
+    <span style="color: black">on {{ post.date_pub|date:"d m, Y" }}</span>
 </div>
 {{ post.content|safe|linebreaks }}
+<a class="btn btn-default btn-danger btn-xs badge pull-left" href="{% url 'blog:post_comment' post.id %}" style="font-size: 0.7em; height: 10%; border:none">Add comment</a>
+<a href="{% url 'blog:postlist' %}" class="btn btn-default btn-success btn-xs badge pull-right" style="font-size: 0.7em; height: 10%; border: none">Recent Posts</a>
 <br>
 <h3>Comments for {{ post.title }}</h3>
 <hr>
@@ -21,6 +23,5 @@
 {% empty %}
     <p>No comments yet for this post</p>
 {% endfor %}
-<a class="btn btn-default btn-danger btn-xs badge pull-left" href="{% url 'blog:post_comment' post.id %}" style="font-size: 0.7em; height: 10%; border:none">Add comment</a>
-<a href="{% url 'blog:postlist' %}" class="btn btn-default btn-success btn-xs badge pull-right" style="font-size: 0.7em; height: 10%; border: none">Recent Posts</a>
+
 {% endblock %}

@@ -28,7 +28,7 @@ class PostDetail(generic.DetailView):
 
 class NewPost(generic.CreateView):
     model = Post
-    fields = ['title', 'author', 'content', 'date_pub']
+    fields = ['title', 'author', 'content']
 
 # class CommentForm(generic.CreateView):
 #     model = Comment

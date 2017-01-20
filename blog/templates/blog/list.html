@@ -1,7 +1,6 @@
 {% extends "polls\layout.html" %}
 {% block title %}Latest Blog Posts{% endblock %}
 {% block content %}
-<br>
 {% if postobject %}
     {% for post in postobject %}
         <h4><a href="{% url 'blog:postdetail' post.id %}"> {{post.title}}</a> <small style="color: gray">by {{ post.author }}</small></h4>
