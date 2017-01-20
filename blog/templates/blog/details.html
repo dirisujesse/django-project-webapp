@@ -1,0 +1,26 @@
+{% extends "polls\layout.html" %}
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2 style="color: rgb(120, 10, 50); font-family: 'Slabo 27px', serif;">{{ post.title }} <small style="color: gray">by {{ post.author }}</small></h2>
+    <span style="color: black">on {{ post.date_pub }}</span>
+</div>
+{{ post.content|safe|linebreaks }}
+<br>
+<h3>Comments for {{ post.title }}</h3>
+<hr>
+{% for comment in post.comments.all %}
+    <div class="comment form form-vertical">
+        <div form-group>
+            <strong style="color: green">{{ comment.commentator|upper }} <small style="color: black">&nbsp; thoughts on {{ post.title }}</small></strong>
+        <p>{{ comment.comment|linebreaks }}</p>
+        <div class="date">on {{ comment.comment_date_time }}</div><hr>
+        </div>
+    </div>
+{% empty %}
+    <p>No comments yet for this post</p>
+{% endfor %}
+<a class="btn btn-default btn-danger btn-xs badge pull-left" href="{% url 'blog:post_comment' post.id %}" style="font-size: 0.7em; height: 10%; border:none">Add comment</a>
+<a href="{% url 'blog:postlist' %}" class="btn btn-default btn-success btn-xs badge pull-right" style="font-size: 0.7em; height: 10%; border: none">Recent Posts</a>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'polls\layout.html' %}
+{% block content %}
+<br>
+<br>
+<div class="row">
+<div class="col-xs-18 col-sm-6 col-md-3">
+  <div class="thumbnail">
+    <img src="http://uvmbored.com/wp-content/uploads/2016/11/IMG_8148-e1478028534194-768x460.jpg" alt="" class="img img-responsive">
+      <div class="caption">
+        <h4>Blog</h4>
+        <p>Visit Our Blog Site</p>
+        <p style="align: center"><a href="{% url 'blog:postlist' %}" class="btn btn-success btn-xs" role="button">View Our Blog</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="col-xs-18 col-sm-6 col-md-3">
+  <div class="thumbnail">
+      {% load staticfiles %}
+    <img src="{% static 'images/i_need_more_space-wallpaper-1920x1080.jpg' %}" alt="">
+      <div class="caption">
+        <h4>Polls</h4>
+        <p>Partake in our polls</p>
+        <p><a href="{% url 'polls:index' %}" class="btn btn-warning btn-xs" role="button">View Our Polls</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="col-xs-18 col-sm-6 col-md-3">
+  <div class="thumbnail">
+    <img src="{% static 'images/red_ink_2-wallpaper-1920x1080.jpg' %}" alt="">
+      <div class="caption">
+        <h4>Fun</h4>
+        <p>Fun Things</p>
+        <p><a href="#" class="btn btn-danger btn-xs" role="button">Polls Results</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="col-xs-18 col-sm-6 col-md-3">
+  <div class="thumbnail">
+    <img src="{% static 'images/output_22_0.jpg' %}" alt="">
+      <div class="caption">
+        <h4>Pydata</h4>
+        <p>Python for Data Analysis</p>
+        <p><a href="#" class="btn btn-info btn-xs" role="button">Learn Python</a></p>
+    </div>
+</div>
+</div>
+</div>
+{% endblock %}
