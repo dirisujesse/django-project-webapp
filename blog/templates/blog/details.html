@@ -10,7 +10,7 @@
 <a class="btn btn-default btn-danger btn-xs badge pull-left" href="{% url 'blog:post_comment' post.id %}" style="font-size: 0.7em; height: 10%; border:none">Add comment</a>
 <a href="{% url 'blog:postlist' %}" class="btn btn-default btn-success btn-xs badge pull-right" style="font-size: 0.7em; height: 10%; border: none">Recent Posts</a>
 <br>
-<h4 class="text text-danger">Comments for <small class="text-primary">{{ post.title }}</small></h4>
+<h2 class="text text-danger">Comments for <small class="text-primary">{{ post.title }}</small></h2>
 <hr>
 {% for comment in post.comments.all %}
     <div class="comment form form-vertical">
