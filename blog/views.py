@@ -10,7 +10,7 @@ def index(request):
     return render(request, 'blog/home.html')
 
 class PostList(generic.ListView):
-    template_name = 'blog\list.html'
+    template_name = 'blog/list.html'
     context_object_name = 'postobject'
 
     def get_queryset(self):
@@ -18,7 +18,7 @@ class PostList(generic.ListView):
 
 class PostDetail(generic.DetailView):
     model = Post
-    template_name = 'blog\details.html'
+    template_name = 'blog/details.html'
 
     def get_queryset(self):
         """
