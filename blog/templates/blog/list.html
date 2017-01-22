@@ -4,7 +4,7 @@
 {% if postobject %}
     {% for post in postobject %}
         <h4 style="text-align: left"><a href="{% url 'blog:postdetail' post.id %}"> {{post.title}}</a> <small style="color: gray">by {{ post.author }}</small></h4>
-        <p style="font-family: 'Flower', serif; color: black">Posted on {{ post.date_pub|date:"d M, Y" }}, <small> {{ post.comments.count }} thought(s) on {{ post.title }} </small></p>
+        <p style="font-family: 'Flower', serif; color: black">Posted on {{ post.date_pub|date:"d M, Y" }}, <small> {{ post.comments.count }} thought{{ post.comments.count|pluralize }} on {{ post.title }} </small></p>
         <hr>
     {% endfor %}
 {% endif %}
