@@ -3,7 +3,7 @@
 {% block content %}
 {% if postobject %}
     {% for post in postobject %}
-        <h4><a href="{% url 'blog:postdetail' post.id %}"> {{post.title}}</a> <small style="color: gray">by {{ post.author }}</small></h4>
+        <h4 style="text-align: left"><a href="{% url 'blog:postdetail' post.id %}"> {{post.title}}</a> <small style="color: gray">by {{ post.author }}</small></h4>
         <h5 style="font-family: 'Flower', serif; color: black">{{ post.date_pub|date:"d M, Y" }}</h5>
     {% endfor %}
 {% endif %}
