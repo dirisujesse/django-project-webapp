@@ -14,7 +14,7 @@ class PostList(generic.ListView):
     context_object_name = 'postobject'
 
     def get_queryset(self):
-        return Post.objects.filter(date_pub__lte=timezone.now()).order_by('-date_pub')[:5]
+        return Post.objects.filter(date_pub__lte=timezone.now()).order_by('-date_pub')
 
 class PostDetail(generic.DetailView):
     model = Post
