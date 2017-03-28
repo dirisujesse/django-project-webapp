@@ -7,8 +7,8 @@
         <p style="font-family: 'Flower', serif; color: black">Posted on {{ post.date_pub|date:"d M, Y" }}, <small> {{ post.comments.count }} thought{{ post.comments.count|pluralize }} on {{ post.title }} </small></p>
         <p>
             <small><a href="https://plus.google.com/share?url=http://localhost:8000{{ request.get_full_path|urlencode }}"><img src="https://projecthosts.files.wordpress.com/2012/01/google-icon.png" class="img-fluid" width="20px"></a></small>
-            <small><a href="http://www.linkedin.com/shareArticle?url=http://localhost:8000{{ request.get_full_path|urlencode }}&title=<your title>&summary=<your desc>&source=http://your-domain"><img src="https://www.sourcecoast.com/images/promo/linkedin_logo.png" class="img-fluid" width="20px"></a></small>
-            <small><a href="http://www.facebook.com/sharer/sharer.php?u=http://localhost:8000{{ request.get_full_path|urlencode }}&title=<your title>&summary=<your desc>&source=http://your-domain"><img src="https://www.sourcecoast.com/images/promo/fb_logo.png" class="img-fluid" width="20px"></a></small>
+            <small><a href="http://www.linkedin.com/shareArticle?url=http://localhost:8000{{ request.get_full_path|urlencode }}&title=<{{post.title}}>&summary=<{{post.body|safe|truncate:30|linebreaks}}>&source=http://dirisujesse.herokuapp.com"><img src="https://www.sourcecoast.com/images/promo/linkedin_logo.png" class="img-fluid" width="20px"></a></small>
+            <small><a href="http://www.facebook.com/sharer/sharer.php?u=http://localhost:8000{{ request.get_full_path|urlencode }}&title=<{{post.title}}>&summary=<{{post.body|safe|truncate:30|linebreaks}}>&source=http://dirisujesse.herokuapp.com"><img src="https://www.sourcecoast.com/images/promo/fb_logo.png" class="img-fluid" width="20px"></a></small>
             <small><a href="{% url "blog:post_share" post.id %}"><img src="https://upload.wikimedia.org/wikipedia/commons/4/45/New_Logo_Gmail.svg" class="img-fluid" width="20px"></a></small>
         </p>
         <hr>
