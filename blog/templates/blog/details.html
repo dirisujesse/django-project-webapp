@@ -7,8 +7,8 @@
     <span style="color: black">on {{ post.date_pub|date:"d m, Y" }}</span>
     <p>
         <small><a href="https://plus.google.com/share?url=http://localhost:8000{{ request.get_full_path|urlencode }}"><img src="https://projecthosts.files.wordpress.com/2012/01/google-icon.png" class="img-fluid" width="20px"></a></small>
-        <small><a href="http://www.linkedin.com/shareArticle?url=http://localhost:8000{{ request.get_full_path|urlencode }}&title=<your title>&summary=<your desc>&source=http://your-domain"><img src="https://www.sourcecoast.com/images/promo/linkedin_logo.png" class="img-fluid" width="20px"></a></small>
-        <small><a href="http://www.facebook.com/sharer/sharer.php?u=http://localhost:8000{{ request.get_full_path|urlencode }}&title=<your title>&summary=<your desc>&source=http://your-domain"><img src="https://www.sourcecoast.com/images/promo/fb_logo.png" class="img-fluid" width="20px"></a></small>
+        <small><a href="http://www.linkedin.com/shareArticle?url=http://localhost:8000{{ request.get_full_path|urlencode }}&title=<{{post.title}}>&summary=<{{post.body|safe|truncate:30|linebreaks}}>&source=http://dirisujesse.herokuapp.com"><img src="https://www.sourcecoast.com/images/promo/linkedin_logo.png" class="img-fluid" width="20px"></a></small>
+        <small><a href="http://www.facebook.com/sharer/sharer.php?u=http://localhost:8000{{ request.get_full_path|urlencode }}&title=<{{post.title}}>&summary=<{{post.body|safe|truncate:30|linebreaks}}>&source=http://dirisujesse.herokuapp.com"><img src="https://www.sourcecoast.com/images/promo/fb_logo.png" class="img-fluid" width="20px"></a></small>
     </p>
 </div>
 {{ post.content|safe|linebreaks }}
