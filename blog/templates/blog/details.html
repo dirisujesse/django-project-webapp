@@ -5,6 +5,11 @@
 <div class="page-header">
     <h2 style="color: rgb(120, 10, 50); font-family: 'Slabo 27px', serif; text-align: left">{{ post.title }} <small style="color: gray">by {{ post.author }}</small></h2>
     <span style="color: black">on {{ post.date_pub|date:"d m, Y" }}</span>
+    <p>
+        <small><a href="https://plus.google.com/share?url=http://localhost:8000{{ request.get_full_path|urlencode }}"><img src="{% static 'simple/google.png' %}" class="img-fluid" width="20px"></a></small>
+        <small><a href="http://www.linkedin.com/shareArticle?url=http://localhost:8000{{ request.get_full_path|urlencode }}&title=<your title>&summary=<your desc>&source=http://your-domain"><img src="{% static 'simple/linkedin.png' %}" class="img-fluid" width="20px"></a></small>
+        <small><a href="http://www.facebook.com/sharer/sharer.php?u=http://localhost:8000{{ request.get_full_path|urlencode }}&title=<your title>&summary=<your desc>&source=http://your-domain"><img src="{% static 'simple/facebook.png' %}" class="img-fluid" width="20px"></a></small>
+    </p>
 </div>
 {{ post.content|safe|linebreaks }}
 <a class="btn btn-default btn-danger btn-xs badge pull-left" href="{% url 'blog:post_comment' post.id %}" style="font-size: 0.7em; height: 10%; border:none">Add comment</a>
