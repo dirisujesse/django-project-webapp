@@ -20,7 +20,7 @@ from blog.sitemaps import PostSiteMap
 from polls.sitemaps import PollSiteMap
 
 sitemaps = {
-    'posts': PostSiteMap
+    'posts': PostSiteMap,
     'polls': PollSiteMap
 }
 
