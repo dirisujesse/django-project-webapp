@@ -3,7 +3,7 @@ from django.template.defaultfilters import truncatewords
 
 from .models import Post
 
-class PollsFeed(Feed):
+class PostFeed(Feed):
     title = 'Posts Feed'
     link = '/'
     description = 'Latest Posts Feeds'
