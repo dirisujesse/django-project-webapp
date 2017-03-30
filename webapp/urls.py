@@ -17,11 +17,11 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from blog.sitemaps import PostSiteMap
-from polls.sitemaps import PollSiteMap
+#from polls.sitemaps import PollSiteMap
 
 sitemaps = {
     'posts': PostSiteMap,
-    'polls': PollSiteMap
+    #'polls': PollSiteMap
 }
 
 
