@@ -4,9 +4,9 @@ from django.template.defaultfilters import truncatewords
 from .models import Post
 
 class PollsFeed(Feed):
-    title_template = 'Posts Feed'
+    title = 'Posts Feed'
     link = '/'
-    description_template = 'Latest Posts Feeds'
+    description = 'Latest Posts Feeds'
     
     def items(self):
         return Post.objects.all()
