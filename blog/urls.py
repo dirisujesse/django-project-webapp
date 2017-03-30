@@ -1,6 +1,7 @@
 from django.conf.urls import url
 
 from .views import *
+from .feeds import PostFeed
 
 app_name = 'blog'
 
@@ -10,4 +11,5 @@ urlpatterns = [
     url(r"(?P<pk>\d+)/$", PostDetail.as_view(), name='postdetail'),
     url(r"^post/new/$", NewPost.as_view(), name="post_new"),
     url(r'^(?P<post_id>\d+)/comment/$', new_comment, name="post_comment"),
+    url(r'^feed/$', LatestPostFeed(), name='post_feed'),
 ]
