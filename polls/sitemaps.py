@@ -4,7 +4,7 @@ from .models import Question
 
 class PollSiteMap(Sitemap):
     changefreq = 'weekly'
-    priority = 0.9
+    priority = 0.8
 
     def items(self):
         return Question.objects.all()
